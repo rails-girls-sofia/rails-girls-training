@@ -44,37 +44,6 @@
 					</h6>
 				</section>
 				<section>
-					<section>
-						<h2>So, web apps?</h2>
-						<p>When we create websites, we store them on a server. When you go to view a website, a bunch of different things happen to show you the page.</p>
-						<p>Know how websites work already?</p>
-						<p><a href="#" class="navigate-right">Yes</a></p>
-						<p><a href="#" class="navigate-down">No</a></p>
-					</section>
-					<section>
-						<ol>
-							<li>You type the address in (or click a link) in your browser (Chrome, Safari, Firefox, Internet Explorer)</li>
-							<li>Your browser asks a server for the information that makes up that page.</li>
-							<li>The server sends the information back to your browser</li>
-							<li>Your browser shows you the page</li>
-						</ol>
-					</section>
-					<section>
-						<p>When we're building our website, we're making the stuff on the server (step 3). Our web app will also need to store data, so it will have a database.</p>
-					</section>
-					<section>
-						<p>Our web app needs to:</p>
-						<ul>
-							<li>Listen for requests from browsers</li>
-							<li>Store any useful information the browser sends to it</li>
-							<li>Send back the information required. This might include retrieving things stored in our database</li>
-						</ul>
-					</section>
-					<section>
-						<p>The information we send back to the browser has to be in a format the browser can read and display. This is normally HTML, as well as some CSS (to make our page look pretty, and Javascript (to make things like forms work).</p>
-					</section>	
-				</section>
-				<section>
 					<h2>Get Ready</h2>
 					<p> To build apps and other things with Ruby on Rails, you need to set up 2 accounts.
 					</p>
@@ -222,8 +191,39 @@
 					<p>Click the terminal, and hit 'Ctrl' + C.</p>
 					<p>This will stop the server</p>
 				</section>
+								<section>
+					<section>
+						<h2>So, web apps?</h2>
+						<p>When we create websites, we store them on a server. When you go to view a website, a bunch of different things happen to show you the page.</p>
+						<p>Know how websites work already?</p>
+						<p><a href="#" class="navigate-right">Yes</a></p>
+						<p><a href="#" class="navigate-down">No</a></p>
+					</section>
+					<section>
+						<ol>
+							<li>You type the address in (or click a link) in your browser (Chrome, Safari, Firefox, Internet Explorer)</li>
+							<li>Your browser asks a server for the information that makes up that page.</li>
+							<li>The server sends the information back to your browser</li>
+							<li>Your browser shows you the page</li>
+						</ol>
+					</section>
+					<section>
+						<p>When we're building our website, we're making the stuff on the server (step 3). Our web app will also need to store data, so it will have a database.</p>
+					</section>
+					<section>
+						<p>Our web app needs to:</p>
+						<ul>
+							<li>Listen for requests from browsers</li>
+							<li>Store and retrieve any information the browser sends to it</li>
+							<li>Send back the information required. This might include retrieving things stored in our database</li>
+						</ul>
+					</section>
+					<section>
+						<p>The information we send back to the browser has to be in a format the browser can read and display. This is normally HTML, as well as some CSS (to make our page look pretty, and Javascript (to make things like forms work).</p>
+					</section>	
+				</section>
 				<section>
-					<p>Before we start working on our app, let's take a look at what's in the app we just set up.
+					<p>Let's take a look at what's in the app we just set up.
 					</p>
 					<p>In the terminal, type:</p>
 					<pre><code>ls</code></pre>
@@ -232,9 +232,43 @@
 					<p>You'll see a list of all the different things in your new app</p>
 					<pre><code>app  bin  config  config.ru  db  Gemfile  Gemfile.lock  lib  localhost:3000  log  public  Rakefile  README.md  README.rdoc  test  tmp  vendor </code></pre>
 				</section>
-
-
-
+				<section>
+					<p>Remember, we had 3 key tasks our web-app needs to complete:</p>
+					<ul>
+					<li>The router listens to the browser requests. It is located in the 'config' part of your app. The router sends information to the controller, which directs the retrieval or storage of information. This is in the 'app' file.</li>
+					<li>Next, we need to actually store or retrieve information from our database. This is managed using Models. These are also found in the app file.</li>
+					<li>Finally, we need to send the information back to the browser. This information is called a 'view'. It's also found in the app files, and contains the information, and instructions about how to display it.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Let's get building.</h2>
+					<p>One of the great things about Rails is that it comes with some built-in things that make it super easy to get going. One of these is scaffolds. Scaffolds let you easily add new concepts (like users, posts and comments) in one command.</p>
+					<p>The scaffold command creates all the necessary code files you need to work with that concept. This includes database tables to store information in, and instructions for how it needs to interact with other parts of your app</p>
+				</section>
+				<section>
+					<p>In the terminal, type:<p>
+					<pre><code>rails generate scaffold idea name:string description:text picture:string</code></pre>
+				</section>
+				<section>
+					<p>You've now create a concept (model) called 'idea' that includes:</p> 
+					<ul>
+						<li>A name</li>
+						<li>A description</li>
+						<li>A picture</li>
+					</ul>
+					<p>The 'string' and 'text' parts tell the app what type of data it will be.</p>
+				</section>
+				<section>
+					<p>When we add new concepts like these to our app, we need to update our database. This is called a migration.</p>
+					<p>In the terminal, type:</p>
+					<pre><code>rake db:migrate</code></pre>
+				</section>
+				<section>
+					<p>Let's restart our server and see what that made.</p>
+					<p>In the terminal, type:</p>
+					<pre><code>rails server</code></pre>
+					
+				
 				<section data-markdown>
 					<script type="text/template">
 						## Markdown support
