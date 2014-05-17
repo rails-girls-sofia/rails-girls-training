@@ -191,7 +191,7 @@
 					<p>Click the terminal, and hit 'Ctrl' + C.</p>
 					<p>This will stop the server</p>
 				</section>
-								<section>
+				<section>
 					<section>
 						<h2>So, web apps?</h2>
 						<p>When we create websites, we store them on a server. When you go to view a website, a bunch of different things happen to show you the page.</p>
@@ -233,14 +233,6 @@
 					<pre><code>app  bin  config  config.ru  db  Gemfile  Gemfile.lock  lib  localhost:3000  log  public  Rakefile  README.md  README.rdoc  test  tmp  vendor </code></pre>
 				</section>
 				<section>
-					<p>Remember, we had 3 key tasks our web-app needs to complete:</p>
-					<ul>
-					<li>The router listens to the browser requests. It is located in the 'config' part of your app. The router sends information to the controller, which directs the retrieval or storage of information. This is in the 'app' file.</li>
-					<li>Next, we need to actually store or retrieve information from our database. This is managed using Models. These are also found in the app file.</li>
-					<li>Finally, we need to send the information back to the browser. This information is called a 'view'. It's also found in the app files, and contains the information, and instructions about how to display it.</li>
-					</ul>
-				</section>
-				<section>
 					<h2>Let's get building.</h2>
 					<p>One of the great things about Rails is that it comes with some built-in things that make it super easy to get going. One of these is scaffolds. Scaffolds let you easily add new concepts (like users, posts and comments) in one command.</p>
 					<p>The scaffold command creates all the necessary code files you need to work with that concept. This includes database tables to store information in, and instructions for how it needs to interact with other parts of your app</p>
@@ -259,9 +251,24 @@
 					<p>The 'string' and 'text' parts tell the app what type of data it will be.</p>
 				</section>
 				<section>
+					<p>There are lots of different types of data you might include, such as:</p>
+					<ul>
+						<li>:binary - stores data such as images, audio files or movies</li>
+						<li>:boolean - stores true or false values (such as whether a particular user is an administrator of an application or not)</li>
+						<li>:date - stores only a date (year, month, day)</li>
+						<li>:datetime - stores both a date and a time</li>
+						<li>:integer - stores whole numbers</li>
+					</ul>
+				</section>
+				<section>
 					<p>When we add new concepts like these to our app, we need to update our database. This is called a migration.</p>
 					<p>In the terminal, type:</p>
 					<pre><code>rake db:migrate</code></pre>
+				</section>
+				<section>
+					<p>There's also a command to reverse the migration if you make a mistake: </p>
+					<pre><code>rake db:rollback</code></pre>
+					<p>If you've heard developers talking about a 'rollback', this is what they mean.</p>
 				</section>
 				<section>
 					<p>Let's restart our server and see what that made.</p>
@@ -279,9 +286,42 @@
 					<p>Once you've had a play, go back to your Nitrous.io editor.</p>
 					<p>Stop the server by clicking in the terminal and typing CTRL + C.</p>
 				</section>
-				
-					
-				
+				<!-- Design/Front-end -->
+				<section>
+					<h2>Making things beautiful </h2>
+					<h4>(or, the front-end)</h4>
+				</section>
+				<section>	
+					<p>In a Ruby on Rails application, the user interface (what someone visiting the website will see), is often written in HTML with Embedded Ruby (ERB) code.</p>
+					<p>This code is contained in a specific directory called ‘views’, located in the app folder of your Rails application directory.</p>
+				</section>
+				<section>
+					<p> HTML (HyperText Markup Language) is the main language used to write the things displayed in a web browser. HTML includes content, and tags to structure the content. These tags come in pairs (an open and a close tag). For example, the main heading on your page will have</p> <pre><code><h1>tags</h1></code></pre> 
+					<p>around it.</p> 
+					<p>HTML tags use angular brackets <pre><code> < > </code></pre>.</p>
+					<p>Your web browser uses the tags to understand how to display content.</p>						
+				</section>
+				<section>
+					<p>ERB is a system supplied by Ruby that allows you to insert pure Ruby code into files written in other languages, such as Javascript or HTML. The Ruby code is contained within specific angle brackets</p>
+					<pre><code><%</code></pre> and <pre><code>%></code></pre> 
+					<p>which instruct the system to execute the contents.</p>
+				</section>
+				<section>
+					<p>If an = sign accompanies the angle brackets</p>
+					<pre><code><%=</code></pre> and <pre><code>%></code></pre>
+					<p>then the contents are executed and rendered on the page.</p>
+					<p>For example, if you had 25 active ideas in your application, the code:</p>
+					<pre><code>There are currently <%= Idea.count %> active ideas</code></pre> 
+					<p>would render as: There are currently 25 active ideas</p>
+				</section>
+				<section>
+					<p>Earlier, we ran a scaffold command to set up our app. As well as creating our model, it also created a controller, and a view.</p>
+					<p>When someone connects to your Rails website, the request the browser sends to the server hits the controller you've created. The controller communicates with the model (and the model with the database) to get the information needed. It then sends that information to the view, which returns the HTML to the requesting browser, so they can see your site.</p>
+				</section>
+				<section>
+					<p>All the things we've talked about so far involve the content of our website, and the structure of that content.</p>
+					<p>The next piece of the puzzle is CSS (Cascading Style Sheets). CSS is used to format/style our website, so that it looks beautiful and is nice to use.</p>
+				</section>
 				<section data-markdown>
 					<script type="text/template">
 						## Markdown support
