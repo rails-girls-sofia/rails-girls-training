@@ -392,18 +392,97 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 					<pre><code>rails server</code></pre>
 					<p>Open the preview on Port:3000 again.</p>
 					<p>Don't forget to add '/ideas' to the end of the URL</p>
+					<p>When you're finished looking, stop the server again by hitting CTRL + c.</p>
 				</section>
 				<section>
 					<h2>Images</h2>
 				</section>
 				<section>
 					<p>In our app, we want to be upload images. At the moment, we can't do that.</p>
-					
+					<p>Rails has lots of useful add ons you can use. In programming, these are usually called libraries, but in Rails, we call them gems. Gems contain pre-written code and help to reduce errors and duplication in your code.</p>
 				</section> 
-				
-				
-				
-				
+				<section>
+					<p>In your project menu, you'll see something called <code>Gemfile</code>. This has all the gems that came with the application we created.</p>
+					<p>Open gemfile so you can edit it in the text editor. Under the line, add:</p>
+					<pre><code>gem 'sqlite3'
+					gem 'carrierwave'</code></pre>
+					<p>The <code>sqlite3 gem</code> interfaces with our database, and <code>carrierwave</code> makes it easier to upload images.</p>
+				</section>
+				<section>
+					<p>In the terminal, run:</p>
+					<pre><code>bundle</code></pre>
+					<p>This runs Rails' Bundler software, which fetches the gems you have added from the <a href="https://rubygems.org">https://rubygems.org</a> website, and installs them.</p>
+				</section>
+				<section>
+					<p>Now, we can generate the code for uploading pictures. In the terminal, type:</p>
+					<pre><code>rails generate uploader Picture</code></pre>
+				</section>
+				<section>
+					<p>Now, we need to customise the form we use for editing and uploading ideas.</p>
+					<p>We're using the same bit of code to edit and upload. This is found in <code>app/models/idea.rb</code></p>
+					<p>This code snippet is used in both <code>edit.html.erb</code> and <code>new.html.erb</code>, as the two forms are basically identical. This saves us some work! If you look at either of those pages, rather than form code, it just says <code><%= render 'form' %></code></p>
+				</section>	
+				<section>
+					<p>Open <code>app/models/idea.rb</code>. Under the line <code>class Idea < ActiveRecord::Base</code>, add:
+					<pre><code>mount_uploader :picture, PictureUploader</code></pre>
+				</section>
+				<section>
+					<p>Open <code>app/views/ideas/_form.html.erb</code>. This file creates our form HTML.</p>
+					<p>At the top, you'll see <code>form_for(@idea)</code>. This starts our form code for the idea form.</p>
+				</section>
+				<section>
+					<p>Find <code><%= f.text_field :picture %></code> and change it to:</p>
+					<pre><code><%= f.file_field :picture %></code></pre>
+					<p>This changes the code from asking for a text input to asking for a file input, which makes it easier for our users to upload an image.</p>
+				</section>
+				<section>
+					<section>
+						<p>Did you get an error?</p>
+						<p><a href="#" class="navigate-right">No.</a></p>
+						<p><a href="#" class="navigate-down">Yes</a>
+					</section>
+					<section>
+						<p>In <code>app/views/ideas/_form.html.erb</code>, change <code><%= form_for(@idea) do |f| %></code> to:</p>
+						<pre><code><%= form_for @idea, :html => {:multipart => true} do |f| %></code></pre>
+					</section>
+				</section>
+				<section>
+						<p>In the terminal, start the server again by typing:</p>
+						<pre><code>rails server</code></pre>
+						<p>Refresh the browser window you're viewing your app in to see the changes, and add a new idea.</p>
+				</section>
+				<section>
+					<p>You'll notice that the image didn't display - instead, it showed the path to the image. Let's fix that.</p>
+					<p>Open <code>app/views/ideas/show.html.erb</code> and change <code><%= @idea.picture %></code> to:
+					<pre><code><%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %></code></pre>
+					<p>Refresh your browser, and you should now see the image.</p>
+				</section>
+				<section>	
+					<section>
+						<p>Want to know more about what that code change did?</p>
+						<p><a href="#" class="navigate-right">I'm good; let's keep going.</a></p>
+						<p><a href="#" class="navigate-down">Yes, please! Explain what this code means.</a>
+					</section>				
+					<section>
+						<p>Let's take a closer look at <code>app/views/ideas/show.html.erb</code></p>
+						<p>
+						In the code <code><%= @idea.picture %></code>, @idea is what we call an 'instance variable'. Instance variables are start with an @ symbol. Each view file (what we're looking at now), has a corresponding controller action, where the instance variables' are set.</p>
+						<p>In our code, @idea is set in the ‘show’ action of the Ideas controller. It's set with the code <code>@idea = Idea.find(params[:id])</code>.</p> 
+						<p>This allows us to use it in the view <code>show.html.erb</code>. It uses the Rails 'Find' method to get the ideas for our app from our database.</p> 
+					</section>
+					<section>
+						<p>The code that follows the <code>@idea</code> variable (<code>.picture</code>) tells Rails to access the ‘picture’ attribute of our resource (idea). </p>
+						<p>Our new code, <code><%= image_tag(@idea.picture_url...)</code>, uses the Ruby image_tag helper. This gives us an HTML <code><img></code> tag, but retrieves the image we want to display from the folder 'public/images' where our uploaded images are stored.</p>
+					</section>
+					<section>
+						<p>We also set a default width for each image (<code>:width => 600</code>).</p>
+						<p>The final part of that line of code, <code>if @idea.picture.present?</code> checks if there is an image available before executing the rest of the code in this file.</p>
+					</section>
+				</section>
+				<section>
+					<h2>Fine-tuning the routes</h2>
+
+				</section>
 				
 				
 				
