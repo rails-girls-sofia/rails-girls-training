@@ -468,22 +468,51 @@ gem 'carrierwave'</code></pre>
 					</section>
 					<section>
 						<p>The code that follows the <code>@idea</code> variable (<code>.picture</code>) tells Rails to access the ‘picture’ attribute of our resource (idea). </p>
-						<p>Our new code, <code><%= image_tag(@idea.picture_url...)</code>, uses the Ruby image_tag helper. This gives us an HTML <code><img></code> tag, but retrieves the image we want to display from the folder 'public/images' where our uploaded images are stored.</p>
+						<p>Our new code, <code><%= image_tag(@idea.picture_url...)</code>, uses the Ruby image_tag helper. This gives us an HTML <code>&lt;img&gt;</code> tag, but retrieves the image we want to display from the folder 'public/images' where our uploaded images are stored.</p>
 					</section>
 					<section>
 						<p>We also set a default width for each image (<code>:width => 600</code>).</p>
 						<p>The final part of that line of code, <code>if @idea.picture.present?</code> checks if there is an image available before executing the rest of the code in this file.</p>
 					</section>
 				</section>
-				<section>
 				<!-- Routes -->
+				<section>
 					<h2>Fine-tuning the routes</h2>
-
 				</section>
-				
-				
-				
-				
+				<section>
+					<p>One part of our app's job is to listen to requests from the browser and return the correct information. In Rails, we have a system called 'routing' that does this.</p>
+					<p>The browser requests information using HTTP* methods. There are four main methods it uses:</p>
+					<ul>
+						<li>GET</li>
+						<li>PUT</li>
+						<li>POST</li>
+						<li>DELETE</li>
+					</ul>	
+					<p></p>
+					<p></p>
+					<p><small>*HTTP (Hypertext Transfer Protocol) defines how information is formatted and transmitted on the Internet</small></p>
+				</section>
+				<section>
+					<p>Rails' routing system ensures the app knows what to do when it receives each of those methods for any of the resources in your app.</p>
+					<p>For example, <code>GET /ideas/new</code> will give you the form for adding a new idea.</p>
+					<p><code>POST /ideas</code> will create a new idea</p>
+				</section>
+				<section>
+					<p>We're going to change some of the routes we have set up. When you open the Localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. We had to manually go to /index.</p>
+					<p>Open <code>config/routes.rb</code>. After the first line, add:</p>
+					<pre><code>root :to => redirect('/ideas')</code></pre>
+					<p>This changes the default page (root) that is returned when a browser requests your app to the /ideas page. Try it out now (don't forget to save your changes first, and restart the server if you've stopped it).</p>
+				</section>	
+				<section>
+					<p>Lastly, we're doing to add a static page to our app. This one is going to provide information about the author of the app - you!</p>
+					<p>In the terminal, type:</p>
+					<pre><code>rails generate controller pages info</code></pre>
+				</section>
+				<section>
+					<p>This created a new folder called 'pages', which you can find under <code>app/views</code>.</p>
+					<p>In that folder, you'll see a page called <code>info.html.erb</code>. Open it up.</p>
+					<p>You can customise the information in this page</p>
+				</section>
 				
 				
 				
