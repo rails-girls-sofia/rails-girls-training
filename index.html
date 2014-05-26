@@ -296,20 +296,15 @@
 					<p>This code is contained in a specific directory called ‘views’, located in the app folder of your Rails application directory.</p>
 				</section>
 				<section>
-					<p> HTML (HyperText Markup Language) is the main language used to write the things displayed in a web browser. HTML includes content, and tags to structure the content. These tags come in pairs (an open and a close tag). For example, the main heading on your page will have</p> <pre><code><h1>tags</h1></code></pre> 
-					<p>around it.</p> 
-					<p>HTML tags use angular brackets <pre><code> < > </code></pre>.</p>
+					<p> HTML (HyperText Markup Language) is the main language used to write the things displayed in a web browser. HTML includes content, and tags to structure the content. These tags come in pairs (an open and a close tag). For example, the main heading on your page will have <code>&lt;h1&gt;tags&lt;/h1&gt;</code> around it.</p> 
+					<p>HTML tags use angular brackets <code> < ></code>.</p>
 					<p>Your web browser uses the tags to understand how to display content.</p>						
 				</section>
 				<section>
-					<p>ERB is a system supplied by Ruby that allows you to insert pure Ruby code into files written in other languages, such as Javascript or HTML. The Ruby code is contained within specific angle brackets</p>
-					<pre><code><%</code></pre> and <pre><code>%></code></pre> 
-					<p>which instruct the system to execute the contents.</p>
+					<p>ERB is a system supplied by Ruby that allows you to insert pure Ruby code into files written in other languages, such as Javascript or HTML. The Ruby code is contained within specific angle brackets <code><%</code> and <code>%></code> which instruct the system to execute the contents.</p>
 				</section>
 				<section>
-					<p>If an = sign accompanies the angle brackets</p>
-					<pre><code><%=</code></pre> and <pre><code>%></code></pre>
-					<p>then the contents are executed and rendered on the page.</p>
+					<p>If an = sign accompanies the angle brackets <code><%=</code> and <code>%></code> then the contents are executed and rendered on the page.</p>
 					<p>For example, if you had 25 active ideas in your application, the code:</p>
 					<pre><code>There are currently <%= Idea.count %> active ideas</code></pre> 
 					<p>would render as: There are currently 25 active ideas</p>
@@ -335,15 +330,15 @@
 				</section>
 				<section>
 					<p>Replace <code><%= yield %></code> with:</p>
-					<pre><code><div class="container">
+					<pre><code> <div class="container">
   <%= yield %>
 </div></code></pre>
-					<p>The <code><div></code> tag is used to divide your code into parts.</p>
+					<p>The <code>&lt;div&gt;</code> tag is used to divide your code into parts.</p>
 					<p>You can also assign a class. This allows you to apply the same styling to all the things with this class. We've called ours 'container'.</p>
 					<p><code><%= yield %></code> is a way of adding the unique content we'll have on each page into the container. This helps make sure our styling is consistent.
 				</section>
 				<section>
-					<p>We want to have a navigation bar at the top of our page, so that people using our app can find their way around. We also want to have a footer at the bottom of the page. In the same file, under <code>body</code> add:</p>
+					<p>We want to have a navigation bar at the top of our page, so that people using our app can find their way around. We also want to have a footer at the bottom of the page. In the same file, under <code>&lt;body&gt;</code> add:</p>
 					<pre><code><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -365,7 +360,7 @@
 				<p>This is the navigation bar</p>
 				</section>
 				<section>
-					<p>Let's add the footer too. Before <code></body></code>, add:</p>
+					<p>Let's add the footer too. Before <code>&lt;/body&gt;</code>, add:</p>
 					<pre><code><footer>
   <div class="container">
     Rails Girls 2014
