@@ -1,4 +1,4 @@
-railsgirlspresentation
+Rails Girls Training Material
 ======================
 
 This is the course material for Rails Girls Auckland.
