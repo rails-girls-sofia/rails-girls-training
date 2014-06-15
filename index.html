@@ -37,7 +37,7 @@
 
 			<!-- Introduction to Rails Girls Apps-->
 			<div class="slides">
-				<section>
+				<section class="title" data-background="#d3360b">
 					<h1>Build your first app</h1>
 					<h3>Get excited and build things</h3>
 					<h4>
@@ -50,7 +50,7 @@
 					<p>In some sections, you'll have the option of reading more information. Use the <strong>down arrow</strong> to read this, and when you're finished, use the right arrow to move on to the next step.</p>
 					<p>If you get lost, <strong>hit the escape key (ESC)</strong> to see an overview of the course, or ask a coach for help.</p>
 				</section>
-				<section>
+				<section class="title" data-background="#d3360b">
 					<h2>Get Ready</h2>
 					<p> To build apps and other things with Ruby on Rails, you need to set up 2 accounts.
 					</p>
@@ -159,7 +159,7 @@
 
 				</section>
 				<!-- Create project files and app directories -->			
-				<section>
+				<section class="title" data-background="#d3360b">
 						<p>First, we're going to make somewhere to store our app</p>
 				</section>
 				<section>
@@ -224,8 +224,8 @@
 					<p>This will stop the server</p>
 				</section>
 				<section>
-					<section>
-						<h2>So, web apps?</h2>
+					<section class="title" data-background="#d3360b">
+						<h2>How do web apps work?</h2>
 						<p>When we create websites, we store them on a server. When you go to view a website, a bunch of different things happen to show you the page.</p>
 						<p>Know how websites work already?</p>
 						<p><a href="#" class="navigate-right">Yes</a></p>
@@ -264,8 +264,10 @@
 					<p>You'll see a list of all the different things in your new app</p>
 					<pre><code>app  bin  config  config.ru  db  Gemfile  Gemfile.lock  lib  localhost:3000  log  public  Rakefile  README.md  README.rdoc  test  tmp  vendor </code></pre>
 				</section>
-				<section>
+				<section class="title" data-background="#d3360b">
 					<h2>Let's get building.</h2>
+				</section>
+				<section>	
 					<p>One of the great things about Rails is that it comes with some built-in things that make it super easy to get going. One of these is scaffolds. Scaffolds let you easily add new concepts (like users, posts and comments) in one command.</p>
 					<p>The scaffold command creates all the necessary code files you need to work with that concept. This includes database tables to store information in, and instructions for how it needs to interact with other parts of your app</p>
 				</section>
@@ -319,7 +321,7 @@
 					<p>Stop the server by clicking in the terminal and typing CTRL + C.</p>
 				</section>
 				<!-- Design/Front-end -->
-				<section>
+				<section class="title" data-background="#d3360b">
 					<h2>Making things beautiful </h2>
 					<h4>(or, the front-end)</h4>
 				</section>
@@ -422,7 +424,7 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 					<p>When you're finished looking, stop the server again by hitting CTRL + c.</p>
 				</section>
 				<!-- Images -->
-				<section>
+				<section class="title" data-background="#d3360b">
 					<h2>Images</h2>
 				</section>
 				<section>
@@ -464,6 +466,11 @@ gem 'carrierwave'</code></pre>
 					<p>This changes the code from asking for a text input to asking for a file input, which makes it easier for our users to upload an image.</p>
 				</section>
 				<section>
+						<p>In the terminal, start the server again by typing:</p>
+						<pre><code>rails server</code></pre>
+						<p>Refresh the browser window you're viewing your app in to see the changes, and add a new idea.</p>
+				</section>
+				<section>
 					<section>
 						<p>Did you get an error?</p>
 						<p><a href="#" class="navigate-right">No.</a></p>
@@ -473,11 +480,6 @@ gem 'carrierwave'</code></pre>
 						<p>In <code>app/views/ideas/_form.html.erb</code>, change <code><%= form_for(@idea) do |f| %></code> to:</p>
 						<pre><code><%= form_for @idea, :html => {:multipart => true} do |f| %></code></pre>
 					</section>
-				</section>
-				<section>
-						<p>In the terminal, start the server again by typing:</p>
-						<pre><code>rails server</code></pre>
-						<p>Refresh the browser window you're viewing your app in to see the changes, and add a new idea.</p>
 				</section>
 				<section>
 					<p>You'll notice that the image didn't display - instead, it showed the path to the image. Let's fix that.</p>
@@ -508,7 +510,7 @@ gem 'carrierwave'</code></pre>
 					</section>
 				</section>
 				<!-- Routes -->
-				<section>
+				<section class="title" data-background="#d3360b" >
 					<h2>Fine-tuning the routes</h2>
 				</section>
 				<section>
@@ -545,7 +547,7 @@ gem 'carrierwave'</code></pre>
 					<p>In that folder, you'll see a page called <code>info.html.erb</code>. Open it up.</p>
 					<p>You can customise the information in this page. If you add /pages/info to your app URL now, you'll see this page.</p>
 				</section>
-				<section>
+				<section class="title" data-background="#d3360b">
 					<p>Congratulations! You've built your basic app.</p>
 					<p>So, what next?</p>
 					<ul>

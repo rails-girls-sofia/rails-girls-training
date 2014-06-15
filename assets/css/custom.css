@@ -21,3 +21,30 @@
   font-size: 1.6em;
   line-height: 1.6;
 }
+.title h1 {
+	color: white;
+	font-weight: bold;
+}
+.title h2 {
+	color: white;
+	font-weight: bold;
+}
+.title h3 {
+	color: white;
+}
+
+.title h4 {
+	color: white;
+}
+
+.title h5 {
+	color: white;
+}
+
+.title h6 {
+	color: white;
+}
+
+.title p {
+	color: white;
+}
