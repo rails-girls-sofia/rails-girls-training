@@ -47,4 +47,35 @@
 
 .title p {
 	color: white;
+	font-weight: bold; 
 }
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #666666; }
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #666666; }
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #666666; }
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #666666; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #999999; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #999999; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #999999; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #999999; }
