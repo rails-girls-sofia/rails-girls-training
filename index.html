@@ -41,7 +41,7 @@
 					<h1>Build your first app</h1>
 					<h3>Get excited and build things</h3>
 					<h4>
-						<small>Created by <a href="http://railsgirls.com">Rails Girls Auckland</a> / <a href="http://twitter.com/railsgirlsakl">@railsgirlsakl</a></small>
+						<small><strong>Created by <a href="http://railsgirls.com">Rails Girls Auckland</a> / <a href="http://twitter.com/railsgirlsakl">@railsgirlsakl</a></strong></small>
 					</h4>
 				</section>
 				<section>
@@ -79,7 +79,7 @@
 							<img src="images/gitsetup.gif" alt="GitHub">
 						</a>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<h2>GitHub</h2>
 						<p>	GitHub is a way to store and share your code.</p> 
 						<p> With Github, you can keep track of all the changes you make and collaborate with other people.</p>
@@ -87,34 +87,34 @@
 						<p>Tell GitHub your email address, pick a username and password, and sign up.</p>
 
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<h2>GitHub: Done!</h2>
 						<p>If you want to know more about Git and GitHub, <a href="#" class="navigate-down">keep reading.</p></a>
 						<p><a href="#" class="navigate-right">Otherwise, move on to the next step.</a></p>
 					</section>
-										<section>
+					<section data-background="#f5f5f5">
 						<p>GitHub is a service that helps you to store and track your code. It runs using a system called 'Git'.</p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>Git manages your project, including all the files you make, as they change over time.</p>
 						<p>Git stores this information in something called a 'repository'.</p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>A repository stores a copy of your project. It also records every change you make to your project. These changes are called 'commits'.</p>
 						<p>This means you can look at your commit history, to see what changes you've made to your project, and when you made them.</p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>When you first create your project, you've got the only copy of it. This is bad, because if something happened to your computer, you might lose everything you've made.</p>
 						<p>Committing your project using Github, using Git, means you've got a backup copy, just in case anything goes wrong.</p> 
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>The other great thing about this is that you can always go back to an old version of your project, so if you make a mistake, or change your mind about something you've done, you can easily fix it.</p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>GitHub also allows you to collaborate on projects. If you and your friend wanted to build something together, you can work on your own computers, committing changes to GitHub as you make them.</p>
 						<p>GitHub lets you know if you've both tried to change the same thing, so you can pick which copy you want to use.</p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>Once we've done some work on our project, we'll commit it to GitHub, but if you want to try out some of the commands you'll be using, <a href="https://try.github.io">check out this tutorial.</a>
 					</section>
 				</section>
@@ -231,7 +231,7 @@
 						<p><a href="#" class="navigate-right">Yes</a></p>
 						<p><a href="#" class="navigate-down">No</a></p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<ol>
 							<li>You type the address in (or click a link) in your browser (Chrome, Safari, Firefox, Internet Explorer)</li>
 							<li>Your browser asks a server for the information that makes up that page.</li>
@@ -239,10 +239,10 @@
 							<li>Your browser shows you the page</li>
 						</ol>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>When we're building our website, we're making the stuff on the server (step 3). Our web app will also need to store data, so it will have a database.</p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>Our web app needs to:</p>
 						<ul>
 							<li>Listen for requests from browsers</li>
@@ -250,7 +250,7 @@
 							<li>Send back the information required. This might include retrieving things stored in our database</li>
 						</ul>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>The information we send back to the browser has to be in a format the browser can read and display. This is normally HTML, as well as some CSS (to make our page look pretty, and Javascript (to make things like forms work).</p>
 					</section>	
 				</section>
@@ -476,7 +476,7 @@ gem 'carrierwave'</code></pre>
 						<p><a href="#" class="navigate-right">No.</a></p>
 						<p><a href="#" class="navigate-down">Yes</a>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>In <code>app/views/ideas/_form.html.erb</code>, change <code><%= form_for(@idea) do |f| %></code> to:</p>
 						<pre><code><%= form_for @idea, :html => {:multipart => true} do |f| %></code></pre>
 					</section>
@@ -493,18 +493,18 @@ gem 'carrierwave'</code></pre>
 						<p><a href="#" class="navigate-right">I'm good; let's keep going.</a></p>
 						<p><a href="#" class="navigate-down">Yes, please! Explain what this code means.</a>
 					</section>				
-					<section>
+					<section data-background="#f5f5f5">
 						<p>Let's take a closer look at <code>app/views/ideas/show.html.erb</code></p>
 						<p>
 						In the code <code><%= @idea.picture %></code>, @idea is what we call an 'instance variable'. Instance variables are start with an @ symbol. Each view file (what we're looking at now), has a corresponding controller action, where the instance variables' are set.</p>
 						<p>In our code, @idea is set in the ‘show’ action of the Ideas controller. It's set with the code <code>@idea = Idea.find(params[:id])</code>.</p> 
 						<p>This allows us to use it in the view <code>show.html.erb</code>. It uses the Rails 'Find' method to get the ideas for our app from our database.</p> 
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>The code that follows the <code>@idea</code> variable (<code>.picture</code>) tells Rails to access the ‘picture’ attribute of our resource (idea). </p>
 						<p>Our new code, <code><%= image_tag(@idea.picture_url...)</code>, uses the Ruby image_tag helper. This gives us an HTML <code>&lt;img&gt;</code> tag, but retrieves the image we want to display from the folder 'public/images' where our uploaded images are stored.</p>
 					</section>
-					<section>
+					<section data-background="#f5f5f5">
 						<p>We also set a default width for each image (<code>:width => 600</code>).</p>
 						<p>The final part of that line of code, <code>if @idea.picture.present?</code> checks if there is an image available before executing the rest of the code in this file.</p>
 					</section>
@@ -547,7 +547,7 @@ gem 'carrierwave'</code></pre>
 					<p>In that folder, you'll see a page called <code>info.html.erb</code>. Open it up.</p>
 					<p>You can customise the information in this page. If you add /pages/info to your app URL now, you'll see this page.</p>
 				</section>
-				<section class="title" data-background="#d3360b">
+				<section>
 					<p>Congratulations! You've built your basic app.</p>
 					<p>So, what next?</p>
 					<ul>
