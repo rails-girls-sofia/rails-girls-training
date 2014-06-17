@@ -49,6 +49,9 @@
 	color: white;
 	font-weight: bold; 
 }
+.title a{
+	color: white;
+}
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
