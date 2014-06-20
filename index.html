@@ -371,7 +371,7 @@
 					<p><code><%= yield %></code> is a way of adding the unique content we'll have on each page into the container. This helps make sure our styling is consistent.
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>We want to have a navigation bar at the top of our page, so that people using our app can find their way around. We also want to have a footer at the bottom of the page. In the same file, under <code>&lt;body&gt;</code> add:</p>
+					<p>We want to have a navigation bar at the top of our page, so that people using our app can find their way around. We also want to have a footer at the bottom of the page. <br>In the same file, under <code>&lt;body&gt;</code> add:</p>
 					<pre><code><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -402,7 +402,7 @@
 <script src="//railsgirls.com/assets/bootstrap.js"></script></code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>Finally, we're going to make some changes to the way our ideas display. We want to space them out a bit. Open <code>app/assets/stylesheets/application.css</code> and at the bottom, add:
+					<p>Finally, we're going to make some changes to the way our ideas display. We want to space them out a bit. Open <code>app/assets/stylesheets/application.css</code> <br>and at the bottom, add:
 					<pre><code>body { padding-top: 100px; }
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
@@ -412,8 +412,8 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>So, what did that CSS do?</p>
 					<p><code>body</code> - this part is known as the selector and refers to the HTML element you wish to style.</p>
-					<p><code>{ padding-top: 100px; }</code> - this part is known as the declaration; each declaration has a property which is the style attribute you wish to change <code>(padding-top)</code>, and an associated value <code>(100px)</code>.</p>
-					<p>Declarations always end with a semicolon and declaration groups are always enclosed by curly brackets.</p>
+					<p><code>{ padding-top: 100px; }</code> - this part is known as the declaration; each declaration has a property which is the style attribute you wish to change <code>(padding-top)</code>, <br>and an associated value <code>(100px)</code>.</p>
+					<p>Declarations always end with a semicolon and declaration groups <br>are always enclosed by curly brackets.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Let's start the server again, and check out our progress. In the terminal, type:</p>
@@ -431,16 +431,16 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 					<p>Rails has lots of useful add ons you can use. In programming, these are usually called libraries, but in Rails, we call them gems. Gems contain pre-written code and help to reduce errors and duplication in your code.</p>
 				</section> 
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>In your project menu, you'll see something called <code>Gemfile</code>. This has all the gems that came with the application we created.</p>
+					<p>In your project menu, you'll see something called <code>Gemfile</code>. <br>This has all the gems that came with the application we created.</p>
 					<p>Open gemfile so you can edit it in the text editor. Under the line, add:</p>
 					<pre><code>gem 'sqlite3'
 gem 'carrierwave'</code></pre>
-					<p>The <code>sqlite3 gem</code> interfaces with our database, and <code>carrierwave</code> makes it easier to upload images.</p>
+					<p>The <code>sqlite3 gem</code> interfaces with our database, and <code>carrierwave</code> <br>makes it easier to upload images.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>In the terminal, run:</p>
 					<pre><code>bundle</code></pre>
-					<p>This runs Rails' Bundler software, which fetches the gems you have added from the <a href="https://rubygems.org">https://rubygems.org</a> website, and installs them.</p>
+					<p>This runs Rails' Bundler software, which fetches the gems you have <br>added from the <a href="https://rubygems.org">https://rubygems.org</a> website, and installs them.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Now, we can generate the code for uploading pictures. In the terminal, type:</p>
@@ -449,7 +449,7 @@ gem 'carrierwave'</code></pre>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Now, we need to customise the form we use for editing and uploading ideas.</p>
 					<p>We're using the same bit of code to edit and upload. This is found in <code>app/models/idea.rb</code></p>
-					<p>This code snippet is used in both <code>edit.html.erb</code> and <code>new.html.erb</code>, as the two forms are basically identical. This saves us some work! If you look at either of those pages, rather than form code, it just says <code><%= render 'form' %></code></p>
+					<p>This code snippet is used in both <code>edit.html.erb</code> and <code>new.html.erb</code>, as the two forms are basically identical. This saves us some work! If you look at either of those pages, <br>rather than form code, it just says <code><%= render 'form' %></code></p>
 				</section>	
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Open <code>app/models/idea.rb</code>. Under the line <code>class Idea < ActiveRecord::Base</code>, add:
@@ -467,7 +467,7 @@ gem 'carrierwave'</code></pre>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>In the terminal, start the server again by typing:</p>
 						<pre><code>rails server</code></pre>
-						<p>Refresh the browser window you're viewing your app in to see the changes, and add a new idea.</p>
+						<p>Refresh the browser window you're viewing your app in to see the changes, <br>and add a new idea.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
@@ -481,7 +481,7 @@ gem 'carrierwave'</code></pre>
 					</section>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>You'll notice that the image didn't display - instead, it showed the path to the image. Let's fix that.</p>
+					<p>You'll notice that the image didn't display; instead, it showed the path to the image. <br>Let's fix that.</p>
 					<p>Open <code>app/views/ideas/show.html.erb</code> and change <code><%= @idea.picture %></code> to:
 					<pre><code><%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %></code></pre>
 					<p>Refresh your browser, and you should now see the image.</p>
@@ -531,20 +531,20 @@ gem 'carrierwave'</code></pre>
 					<p><code>POST /ideas</code> will create a new idea</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>We're going to change some of the routes we have set up. When you open the Localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. We had to manually go to /index.</p>
+					<p>We're going to change some of the routes we have set up. When you open the Localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. <br>We had to manually go to /index.</p>
 					<p>Open <code>config/routes.rb</code>. After the first line, add:</p>
 					<pre><code>root :to => redirect('/ideas')</code></pre>
-					<p>This changes the default page (root) that is returned when a browser requests your app to the /ideas page. Try it out now (don't forget to save your changes first, and restart the server if you've stopped it).</p>
+					<p>This changes the default page (root) that is returned when a browser requests your app to the /ideas page. Try it out now (don't forget to save your changes first, and <br>restart the server if you've stopped it).</p>
 				</section>	
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>Lastly, we're doing to add a static page to our app. This one is going to provide information about the author of the app - you!</p>
+					<p>Lastly, we're doing to add a static page to our app. This one is going to <br>provide information about the author of the app - you!</p>
 					<p>In the terminal, type:</p>
 					<pre><code>rails generate controller pages info</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>This created a new folder called 'pages', which you can find under <code>app/views</code>.</p>
 					<p>In that folder, you'll see a page called <code>info.html.erb</code>. Open it up.</p>
-					<p>You can customise the information in this page. If you add /pages/info to your app URL now, you'll see this page.</p>
+					<p>You can customise the information in this page. <br>If you add /pages/info to your app URL now, you'll see this page.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Congratulations! You've built your basic app.</p>
