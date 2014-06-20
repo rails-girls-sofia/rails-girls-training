@@ -224,7 +224,7 @@
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<section class="title" data-background="images/red-hearts.png">
 						<h2>How do web apps work?</h2>
-						<p>When we create websites, we store them on a server. When you go to view a website, a bunch of different things happen to show you the page.</p>
+						<p>When we create websites, we store them on a server. When you go to view a website, <br>a bunch of different things happen to show you the page.</p>
 						<p><strong>Know how websites work already?</strong></p>
 						<p><a href="#" class="navigate-right">Yes</a></p>
 						<p><a href="#" class="navigate-down">No</a></p>
@@ -238,7 +238,7 @@
 						</ol>
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
-						<p>When we're building our website, we're making the stuff on the server (step 3). Our web app will also need to store data, so it will have a database.</p>
+						<p>When we're building our website, we're making the stuff on the server (step 3). <br>Our web app will also need to store data, so it will have a database.</p>
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>Our web app needs to:</p>
@@ -250,6 +250,7 @@
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>The information we send back to the browser has to be in a format the browser can read and display. This is normally HTML, as well as some CSS (to make our page look pretty, and Javascript (to make things like forms work).</p>
+						<p><a href="#" class="navigate-right">Let's get on with making our app.</a></p>
 					</section>	
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
@@ -308,8 +309,8 @@
 					<pre><code>rails server</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>Open the preview on Port:3000 again.</p>
-					<p>The address in the browser will be yourappname.nitrousbox.com. Add '/ideas' to the end of the URL</p>
+					<p><strong>Open the preview on Port:3000</strong> again.</p>
+					<p>The address in the browser will be yourappname.nitrousbox.com. <br><strong>Add '/ideas' to the end of the URL</strong></p>
 					<p>You'll now be able to see the basics of the app you're creating!</p>
 					<p>If you can't see your app, ask a coach for help.</p>
 				</section>
@@ -328,7 +329,7 @@
 					<p>This code is contained in a specific directory called ‘views’, located in the app folder of your Rails application directory.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p> HTML (HyperText Markup Language) is the main language used to write the things displayed in a web browser. HTML includes content, and tags to structure the content. These tags come in pairs (an open and a close tag). For example, the main heading on your page will have <code>&lt;h1&gt;tags&lt;/h1&gt;</code> around it.</p> 
+					<p> HTML (HyperText Markup Language) is the main language used to write the things displayed in a web browser. HTML includes content, and tags to structure the content. These tags come in pairs (an open and a close tag). <br>For example, the main heading on your page will have <code>&lt;h1&gt;tags&lt;/h1&gt;</code> around it.</p> 
 					<p>HTML tags use angular brackets <code> < ></code>.</p>
 					<p>Your web browser uses the tags to understand how to display content.</p>						
 				</section>
@@ -336,21 +337,21 @@
 					<p>ERB is a system supplied by Ruby that allows you to insert pure Ruby code into files written in other languages, such as Javascript or HTML. The Ruby code is contained within specific angle brackets <code><%</code> and <code>%></code> which instruct the system to execute the contents.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>If an = sign accompanies the angle brackets <code><%=</code> and <code>%></code> then the contents are executed and rendered on the page.</p>
+					<p>If an = sign accompanies the angle brackets <code><%=</code> and <code>%></code>, <br>then the contents are executed and rendered on the page.</p>
 					<p>For example, if you had 25 active ideas in your application, the code:</p>
 					<pre><code>There are currently <%= Idea.count %> active ideas</code></pre> 
 					<p>would render as: There are currently 25 active ideas</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>Earlier, we ran a scaffold command to set up our app. As well as creating our model, it also created a controller, and a view.</p>
+					<p>Earlier, we ran a scaffold command to set up our app. <br>As well as creating our model, it also created a controller, and a view.</p>
 					<p>When someone connects to your Rails website, the request the browser sends to the server hits the controller you've created. The controller communicates with the model (and the model with the database) to get the information needed. It then sends that information to the view, which returns the HTML to the requesting browser, so they can see your site.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>All the things we've talked about so far involve the content of our website, and the structure of that content.</p>
-					<p>The next piece of the puzzle is CSS (Cascading Style Sheets). CSS is used to format/style our website, so that it looks beautiful and is nice to use.</p>
+					<p>All the things we've talked about so far involve the content of our website, <br>and the structure of that content.</p>
+					<p>The next piece of the puzzle is CSS (Cascading Style Sheets). CSS is used to format/style <br>our website, so that it looks beautiful and is nice to use.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>In Nitrous.io, the left side of the page has a tree menu. Use this to open <code>app/views/layouts/application.html.erb</code> in your text editor. This is a default layout file. You can use this to create default formatting for your app.
+					<p>In Nitrous.io, the left side of the page has a tree menu. Use this to open <code>app/views/layouts/application.html.erb</code> in your text editor. <br>This is a default layout file. You can use this to create default formatting for your app.
 					</p>
 					<p>Find the line <code><%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %></code>. Above this line, add this code:</p>
 					<pre><code><link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css" />
@@ -366,7 +367,7 @@
   <%= yield %>
 </div></code></pre>
 					<p>The <code>&lt;div&gt;</code> tag is used to divide your code into parts.</p>
-					<p>You can also assign a class. This allows you to apply the same styling to all the things with this class. We've called ours 'container'.</p>
+					<p>You can also assign a class. This allows you to apply the same styling <br>to all the things with this class. We've called ours 'container'.</p>
 					<p><code><%= yield %></code> is a way of adding the unique content we'll have on each page into the container. This helps make sure our styling is consistent.
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
