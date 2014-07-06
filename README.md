@@ -7,4 +7,4 @@ Rails Girls Auckland is running an experimental version of the Rails Girls curri
 
 This material outlines the curriculum for that, and also incorporates some of the "Guide to the Guide", to provide more explanations for what the students are doing, when they are doing it.
 
-You can [access the material here](http://natdudley.github.io/railsgirlspresentation).
+You can [access the material here](http://railsgirlsauckland.github.io/Rails-Girls-Training).
