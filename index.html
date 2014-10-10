@@ -501,7 +501,7 @@ gem 'carrierwave'</code></pre>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>You'll notice that the image didn't display; instead, it showed the path to the image. <br>Let's fix that.</p>
 					<p>Open <code>app/views/ideas/show.html.erb</code> and change <code><%= @idea.picture %></code> to:
-					<pre><code><%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %></code></pre>
+					<pre><code><%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %></code></pre>
 					<p>Refresh your browser, and you should now see the image.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
@@ -522,7 +522,7 @@ gem 'carrierwave'</code></pre>
 						<p>Our new code, <code><%= image_tag(@idea.picture_url...)</code>, uses the Ruby image_tag helper. This gives us an HTML <code>&lt;img&gt;</code> tag, but retrieves the image we want to display from the folder 'public/images' where our uploaded images are stored.</p>
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
-						<p>We also set a default width for each image (<code>:width => 600</code>).</p>
+						<p>We also set a default width for each image (<code>width: 600</code>).</p>
 						<p>The final part of that line of code, <code>if @idea.picture.present?</code> checks if there is an image available before executing the rest of the code in this file.</p>
 					</section>
 				</section>
@@ -547,9 +547,9 @@ gem 'carrierwave'</code></pre>
 					<p><code>POST /ideas</code> will create a new idea.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>We're going to change some of the routes we have set up. When you open the Localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. <br>We had to manually go to /index.</p>
+					<p>We're going to change some of the routes we have set up. When you open the localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. <br>We had to manually go to /index.</p>
 					<p>Open <code>config/routes.rb</code>. After the first line, add:</p>
-					<pre><code>root :to => redirect('/ideas')</code></pre>
+					<pre><code>root to: redirect('/ideas')</code></pre>
 					<p>This changes the default page (root) that is returned when a browser requests your app to the /ideas page. Try it out now (don't forget to save your changes first, and <br>restart the server if you've stopped it).</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
