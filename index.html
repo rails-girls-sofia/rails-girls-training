@@ -461,9 +461,8 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>In your project menu, you'll see something called <code>Gemfile</code>. <br>This has all the gems that came with the application we created.</p>
-					<p>Open gemfile so you can edit it in the text editor. Under the line, add:</p>
-					<pre><code>gem 'sqlite3'
-gem 'carrierwave'</code></pre>
+					<p>Open gemfile so you can edit it in the text editor. Under the line <code>gem 'sqlite3'</code>, add:</p>
+					<pre><code>gem 'carrierwave'</code></pre>
 					<p>The <code>sqlite3 gem</code> interfaces with our database, and <code>carrierwave</code> <br>makes it easier to upload images.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
@@ -534,7 +533,7 @@ gem 'carrierwave'</code></pre>
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>We also set a default width for each image (<code>width: 600</code>).</p>
-						<p>The final part of that line of code, <code>if @idea.picture.present?</code> checks if there is an image available before executing the rest of the code in this file.</p>
+						<p>The final part of that line of code, <code>if @idea.picture.present?</code> checks if there is an image available before executing the code before it.</p>
 					</section>
 				</section>
 				<!-- Routes -->
@@ -558,13 +557,13 @@ gem 'carrierwave'</code></pre>
 					<p><code>POST /ideas</code> will create a new idea.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>We're going to change some of the routes we have set up. When you open the localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. <br>We had to manually go to /index.</p>
+					<p>We're going to change some of the routes we have set up. When you open the localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. <br>We had to manually go to /ideas.</p>
 					<p>Open <code>config/routes.rb</code>. After the first line, add:</p>
 					<pre><code>root to: redirect('/ideas')</code></pre>
 					<p>This changes the default page (root) that is returned when a browser requests your app to the /ideas page. Try it out now (don't forget to save your changes first, and <br>restart the server if you've stopped it).</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>Lastly, we're doing to add a static page to our app. This one is going to <br>provide information about the author of the app - you!</p>
+					<p>Lastly, we're going to add a static page to our app. This one is going to <br>provide information about the author of the app - you!</p>
 					<p>In the terminal, type:</p>
 					<pre><code>rails generate controller pages info</code></pre>
 				</section>
@@ -595,7 +594,7 @@ gem 'carrierwave'</code></pre>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Go back to Nitrous.io. Make sure you're still in your project directory.</p>
 					<p>You can check this by looking at the terminal. It should show something like this:</p>
-					<pre><code>action@railsgirls-rails-98616:~/projects/railsgirls(master*)$</code></pre>
+					<pre><code>action@railsgirls-rails-98616:~/projects/railsgirls$</code></pre>
 					<p>If you're not, use the <code>cd</code> command you learned earlier to change back into that directory.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
